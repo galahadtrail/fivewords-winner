@@ -25,4 +25,11 @@ letter = ""
 
 while True:
     letter = str(input())
-    
+    if letter != "q":
+        black_list.append(letter)
+        continue
+    else:
+        break
+
+
+
