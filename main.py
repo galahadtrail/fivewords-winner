@@ -14,3 +14,15 @@ for word in words:
     if len(word) == 5:
         result.append(word)
 
+
+black_list = []
+white_list = []
+
+print("Please type all letters that are exclude:\n")
+print("For ending of input print the letter `q`\n")
+
+letter = ""
+
+while True:
+    letter = str(input())
+    
