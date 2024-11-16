@@ -1,3 +1,5 @@
+import itertools
+
 russian_letters = ["а", "б", "в", "г", "д", "е", "ж", "з", "и", "к", 
 "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ы", "ъ", "э", "ь", "ю", "я"]
 
@@ -30,6 +32,13 @@ while True:
         continue
     else:
         break
+
+for lett in russian_letters:
+    if lett not in black_list:
+        white_list.append(lett)
+
+permutations = itertools.permutations(white_list, 5)
+
 
 
 
