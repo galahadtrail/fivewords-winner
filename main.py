@@ -1,3 +1,4 @@
+
 def  is_letter_in_word(black, word):
     for letter in word:
         if letter in black:
@@ -32,8 +33,21 @@ black_list = letter.split(",")
 
 black_list = set(sorted(black_list))
 
-finally_result = []
+finally_black_result = []
 
 for word in result:
     if not is_letter_in_word(black_list, word):
+        finally_black_result.append(word)
+
+print("Please type all letters that are include, divided by comma:\n")
+letter = str(input())
+white_list = letter.split(",")
+
+white_list = set(sorted(white_list))
+finally_result = []
+
+for word in finally_black_result:
+    if is_letter_in_word(white_list, word):
         finally_result.append(word)
+
+print(sorted(finally_result))
