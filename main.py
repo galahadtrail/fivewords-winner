@@ -39,6 +39,8 @@ for lett in russian_letters:
 
 permutations = itertools.permutations(white_list, 5)
 
-
-
-
+for perm in permutations:
+    if perm in result:
+        print("That's the results!\n")
+        print(perm)
+        break
