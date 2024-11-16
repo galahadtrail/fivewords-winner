@@ -5,6 +5,13 @@ def  is_letter_in_word(black, word):
             return True
     return False
 
+def white_is_letter_in_word(white, word):
+    for letter in white:
+        if letter not in word:
+            return False
+
+    return True
+
 def is_letter_in_forbidden(letter, dct):
     for let in dct:
         if letter == let:
@@ -55,12 +62,12 @@ white_list = set(sorted(white_list))
 finally_result = []
 
 for word in finally_black_result:
-    if is_letter_in_word(white_list, word):
+    if white_is_letter_in_word(white_list, word):
         finally_result.append(word)
 
 finally_result = set(finally_result)
 
-print("Please type which letters can not be at some places. Type q to interrupt the string\n")
+print("Please type which letters can not be at some places.\n")
 
 first_letter = []
 letter = str(input())
