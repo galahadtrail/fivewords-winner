@@ -39,6 +39,8 @@ for word in result:
     if not is_letter_in_word(black_list, word):
         finally_black_result.append(word)
 
+finally_black_result = set(finally_black_result)
+
 print("Please type all letters that are include, divided by comma:\n")
 letter = str(input())
 white_list = letter.split(",")
@@ -51,3 +53,47 @@ for word in finally_black_result:
         finally_result.append(word)
 
 print(sorted(finally_result))
+
+finally_result = set(finally_result)
+
+print("Please type which letters can not be at some places. Type q to interrupt the string\n")
+
+first_letter = []
+while True:
+    letter = str(input())
+    if letter != "q":
+        first_letter.append(letter)
+    else:
+        break
+    
+second_letter = []
+while True:
+    letter = str(input())
+    if letter != "q":
+        second_letter.append(letter)
+    else:
+        break
+
+third_letter = []
+while True:
+    letter = str(input())
+    if letter != "q":
+        third_letter.append(letter)
+    else:
+        break
+
+forth_letter = []
+while True:
+    letter = str(input())
+    if letter != "q":
+        forth_letter.append(letter)
+    else:
+        break
+
+fifth_letter = []
+while True:
+    letter = str(input())
+    if letter != "q":
+        fifth_letter.append(letter)
+    else:
+        break
