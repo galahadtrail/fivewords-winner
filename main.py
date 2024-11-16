@@ -1,4 +1,8 @@
-import itertools
+def  is_letter_in_word(black, word):
+    for letter in word:
+        if letter in black:
+            return True
+    return False
 
 russian_letters = ["а", "б", "в", "г", "д", "е", "ж", "з", "и", "к", 
 "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ы", "ъ", "э", "ь", "ю", "я"]
@@ -14,33 +18,22 @@ result = []
 
 for word in words:
     if len(word) == 5:
-        result.append(word)
+        result.append(word.lower())
 
+result = set(sorted(result))
 
 black_list = []
 white_list = []
 
-print("Please type all letters that are exclude:\n")
-print("For ending of input print the letter `q`\n")
+print("Please type all letters that are exclude, divided by comma:\n")
 
-letter = ""
+letter = str(input())
+black_list = letter.split(",")
 
-while True:
-    letter = str(input())
-    if letter != "q":
-        black_list.append(letter)
-        continue
-    else:
-        break
+black_list = set(sorted(black_list))
 
-for lett in russian_letters:
-    if lett not in black_list:
-        white_list.append(lett)
+finally_result = []
 
-permutations = itertools.permutations(white_list, 5)
-
-for perm in permutations:
-    if perm in result:
-        print("That's the results!\n")
-        print(perm)
-        break
+for word in result:
+    if not is_letter_in_word(black_list, word):
+        finally_result.append(word)
